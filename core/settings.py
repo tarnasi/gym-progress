@@ -18,7 +18,7 @@ environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-50ity373!0w@=pdfa&d5-4$7@ggvo8%g6mm#m1^vwassu)+thu'
+SECRET_KEY = env("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env("DEBUG")
@@ -139,7 +139,7 @@ REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.authentication` permissions,
     # or allow read-only access for unauthenticated users.
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.AllowAny'
+        'rest_framework.permissions.IsAuthenticated'
     ],
 
     'DEFAULT_AUTHENTICATION_CLASSES': (
@@ -162,3 +162,5 @@ EMAIL_PORT = env('EMAIL_PORT')
 FIXTURE_DIRS = [
     BASE_DIR / 'fixture'
 ]
+
+APPEND_SLASH = False

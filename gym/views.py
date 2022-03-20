@@ -1,3 +1,12 @@
-from django.shortcuts import render
+from rest_framework.permissions import IsAuthenticated
+from rest_framework import viewsets
 
-# Create your views here.
+from .models import GymTracker
+
+from .serializers import GymSerializer
+
+
+class CreateNewGym(viewsets.ModelViewSet):
+    queryset = GymTracker.objects.all()
+    serializer_class = GymSerializer
+    permission_classes = [IsAuthenticated]

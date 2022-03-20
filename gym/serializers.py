@@ -17,3 +17,4 @@ class GymWithProgramSerializer(serializers.ModelSerializer):
     class Meta:
         model = GymTracker
         fields = ['gym_name', 'start_at', 'end_at', 'exercise_in_week', 'exercise_in_day']
+
