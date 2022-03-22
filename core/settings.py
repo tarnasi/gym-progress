@@ -35,11 +35,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'drf_yasg',
-    'rest_framework',
     "corsheaders",
-    'rest_framework_simplejwt',
 
+    'authenticate.apps.AuthenticateConfig',
     'gym.apps.GymConfig',
     'program.apps.ProgramConfig',
 ]
@@ -141,22 +139,7 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-
-# https://www.django-rest-framework.org/#
-
-REST_FRAMEWORK = {
-    # Use Django's standard `django.contrib.authentication` permissions,
-    # or allow read-only access for unauthenticated users.
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticated'
-    ],
-
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
-    )
-}
-
+AUTH_USER_MODEL = "authenticate.User"
 
 # email configuration
 
