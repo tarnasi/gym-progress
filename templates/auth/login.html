@@ -34,23 +34,32 @@
                                 <p class="mb-0">Enter your username and password to sign in</p>
                             </div>
                             <div class="card-body">
-                                <form role="form">
-                                    <label>Email</label>
+                                <form action="{% url "authenticate:login" %}" method="post">
+                                    {% csrf_token %}
+                                    {% if login_form.non_field_errors %}
+                                        <ul>
+                                        {% for error in login_form.non_field_errors %}
+                                            <li class="text-danger text-sm">{{ error }}</li>
+                                        {% endfor %}
+                                        </ul>
+                                    {% endif %}
+                                    <label id="{{ login_form.email.id_for_label }}">Email</label>
                                     <div class="mb-3">
-                                        <input type="text" class="form-control" placeholder="Username"
-                                               aria-label="Email" aria-describedby="username-addon">
+                                        {{ login_form.email }}
+                                        <p class="text-danger text-sm">{{ login_form.email.errors }}</p>
                                     </div>
-                                    <label>Password</label>
+                                    <label id="{{ login_form.password.id_for_label }}">Password</label>
                                     <div class="mb-3">
-                                        <input type="email" class="form-control" placeholder="Password"
-                                               aria-label="Password" aria-describedby="password-addon">
+                                        {{ login_form.password }}
+                                        <p class="text-danger text-sm">{{ login_form.password.errors }}</p>
                                     </div>
                                     <div class="form-check form-switch">
-                                        <input class="form-check-input" type="checkbox" id="rememberMe" checked="">
+                                        {{ login_form.remember_me }}
                                         <label class="form-check-label" for="rememberMe">Remember me</label>
+                                        <p class="text-danger text-sm">{{ login_form.remember_me.errors }}</p>
                                     </div>
                                     <div class="text-center">
-                                        <button type="button" class="btn bg-gradient-info w-100 mt-4 mb-0">Sign in
+                                        <button type="submit" class="btn bg-gradient-info w-100 mt-4 mb-0">Sign in
                                         </button>
                                     </div>
                                 </form>

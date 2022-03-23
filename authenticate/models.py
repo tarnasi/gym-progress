@@ -34,7 +34,7 @@ class UserManager(BaseUserManager):
         admin.is_superuser = True
         admin.is_admin = True
         admin.is_email_verified = True
-        admin.email_verify_at = datetime.now()
+        admin.email_verify_at = str(datetime.now())
         admin.save()
         return admin
 

@@ -2,12 +2,13 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from django.views.generic import TemplateView
+
+from authenticate.views import DashboardView
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('dashboard/admin/', admin.site.urls),
     path('auth/', include('authenticate.urls', namespace="authenticate")),
-    path('', TemplateView.as_view(template_name="dashboard/dashboard.html"), name="home-page")
+    path('', DashboardView.as_view(), name="home-page")
 ]
 
 if settings.DEBUG is True:
