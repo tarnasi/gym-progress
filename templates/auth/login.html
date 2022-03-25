@@ -28,7 +28,30 @@
             <div class="container">
                 <div class="row">
                     <div class="col-xl-4 col-lg-5 col-md-6 d-flex flex-column mx-auto">
-                        <div class="card card-plain mt-8">
+                        {% if messages %}
+                            <div class="card card-plain pb-0 mb-0">
+                                <div class="card-body">
+                                    {% for message in messages %}
+                                        {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+                                            <div class="alert alert-success text-white">
+                                                {{ message }}
+                                            </div>
+                                        {% endif %}
+                                        {% if message.level == DEFAULT_MESSAGE_LEVELS.INFO %}
+                                            <div class="alert alert-warning text-white">
+                                                {{ message }}
+                                            </div>
+                                        {% endif %}
+                                        {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                                            <div class="alert alert-danger text-white">
+                                                {{ message }}
+                                            </div>
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        {% endif %}
+                        <div class="card card-plain mt-5">
                             <div class="card-header pb-0 text-left bg-transparent">
                                 <h3 class="font-weight-bolder text-info text-gradient">Welcome To GYM Progress</h3>
                                 <p class="mb-0">Enter your username and password to sign in</p>
@@ -38,9 +61,9 @@
                                     {% csrf_token %}
                                     {% if login_form.non_field_errors %}
                                         <ul>
-                                        {% for error in login_form.non_field_errors %}
-                                            <li class="text-danger text-sm">{{ error }}</li>
-                                        {% endfor %}
+                                            {% for error in login_form.non_field_errors %}
+                                                <li class="text-danger text-sm">{{ error }}</li>
+                                            {% endfor %}
                                         </ul>
                                     {% endif %}
                                     <label id="{{ login_form.email.id_for_label }}">Email</label>

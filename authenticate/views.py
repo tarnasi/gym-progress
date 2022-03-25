@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views import generic
-from django import forms
 from django.contrib.auth import authenticate, login, logout
+from django.contrib import messages
 
 from .models import User
 
@@ -32,14 +32,17 @@ class LoginView(generic.View):
         if form.is_valid():
             email = form.cleaned_data['email']
             password = form.cleaned_data['password']
+            remember_me = form.cleaned_data['remember_me']
 
             user = authenticate(username=email, password=password)
             if user is not None:
                 login(request, user)
-                # messages.info(request, f"You are now logged in as {email}")
+                messages.success(request, f"You are now logged in as {email}")
+                if not remember_me:
+                    request.session.set_expiry(0)
                 return redirect("/")
             else:
-                # messages.error(request, "Invalid username or password.")
+                messages.error(request, "Invalid username or password.")
                 form.add_error(None, "User Doesn't exist")
                 return render(request, "auth/login.html", {"login_form": form})
         else:
@@ -73,4 +76,5 @@ class LogoutView(generic.View):
     def post(self, request):
         if request.user.is_authenticated:
             logout(request)
+            messages.info(request, f"You are now logged out")
             return redirect("/auth/login")

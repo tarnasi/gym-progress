@@ -110,7 +110,7 @@
                                 <span class="d-sm-inline d-none">{{ user.email }}</span>
                             </a>
                             <button class="btn btn-sm btn-danger mb-0 mx-3"
-                            onclick="document.getElementById('logout-form').submit()">
+                                    onclick="document.getElementById('logout-form').submit()">
                                 <i class="fa fa-sign-out me-sm-1"></i>
                                 <span class="d-sm-inline d-none">sign out</span>
                             </button>
@@ -138,6 +138,25 @@
         </div>
     </nav>
     <!-- End Navbar -->
+    {% if messages %}
+        {% for message in messages %}
+            {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+                <div class="alert alert-success text-white">
+                    {{ message }}
+                </div>
+            {% endif %}
+            {% if message.level == DEFAULT_MESSAGE_LEVELS.INFO %}
+                <div class="alert alert-info text-white">
+                    {{ message }}
+                </div>
+            {% endif %}
+            {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                <div class="alert alert-danger text-white">
+                    {{ message }}
+                </div>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
     {% block content %}{% endblock %}
 </main>
 
