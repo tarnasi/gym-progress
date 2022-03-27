@@ -98,7 +98,8 @@
                                     <p class="mb-1 pt-2 text-bold">Add Your Workouts</p>
                                     <h5 class="font-weight-bolder">Create New GYM Progress</h5>
                                     <div class="d-flex justify-content-center align-items-center w-100 min-vh-25">
-                                        <a href="" class="btn btn-info btn-link">
+                                        <a href="javascript:void(0)" class="btn btn-info btn-link"
+                                           data-bs-toggle="modal" data-bs-target="#createGym">
                                             <i class="fa fa-plus" style="font-size: 3rem"></i>
                                         </a>
                                     </div>
@@ -110,4 +111,32 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="createGym" tabindex="-1" aria-labelledby="createGymLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="createGymLabel">Create Gym</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Recipient:</label>
+                            <input type="text" class="form-control" id="recipient-name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message-text" class="col-form-label">Message:</label>
+                            <textarea class="form-control" id="message-text"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Create</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 {% endblock %}
