@@ -4,16 +4,23 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 
 from .models import User
+from gym.models import GymTracker
 
 from .forms import LoginForm
+from gym.forms import CreateGymForm
 
 
 class DashboardView(generic.View):
 
     @classmethod
     def get(cls, request):
+        form = CreateGymForm()
+
         if request.user.is_authenticated:
-            return render(request, "dashboard/dashboard.html", {})
+            context = {
+                "form": form,
+            }
+            return render(request, "dashboard/dashboard.html", context)
         return redirect("/auth/login")
 
 

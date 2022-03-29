@@ -1,0 +1,29 @@
+{% extends "layouts/root.html" %}
+
+{% block content %}
+    <div class="row mt-5">
+        <div class="card border border-dark">
+            <div class="card-body">
+                <div class="row mt-5 ">
+                    <div class="col">
+                        <span class="font-weight-bold">GYM Name: {{ object.gym_name }}</span>
+                    </div>
+                    <div class="col">
+                        <span class="font-weight-bold">Start GYM at: {{ object.start_at|date:"F d, Y" }}</span>
+                    </div>
+                    <div class="col">
+                        <span class="font-weight-bold">End at: {{ object.end_at|date:"F d, Y" }}</span>
+                    </div>
+                    <div class="col">
+                        <span class="font-weight-bold">Workout in week: {{ object.exercise_in_week }}</span>
+                    </div>
+                    <div class="col">
+                        <span class="font-weight-bold">Workout in day: {{ object.exercise_in_day }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-5">
+    </div>
+{% endblock %}
