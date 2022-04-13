@@ -4,7 +4,7 @@
     <div class="row mt-5">
         <div class="card border border-dark">
             <div class="card-body">
-                <div class="row mt-5 ">
+                <div class="row">
                     <div class="col">
                         <span class="font-weight-bold">GYM Name: {{ object.gym_name }}</span>
                     </div>
@@ -25,5 +25,70 @@
         </div>
     </div>
     <div class="row mt-5">
+        <div class="col-6">
+            <div class="card border border-dark">
+                <div class="card-header pb-0 font-weight-bolder">
+                    Edit {{ object.object_name }} below:
+                </div>
+                <div class="card-body">
+                    <form action="{% url "GYM:update" object.id %}" method="post">
+                        {% csrf_token %}
+                        {{ form }}
+                        <div class="d-flex w-100 justify-content-end">
+                            <button type="submit" class="btn btn-light mt-3">Update</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="card border border-dark">
+                <div class="card-header pb-2">
+                    <a class="btn btn-primary" href="javascript:void(0)" data-bs-toggle="modal"
+                       data-bs-target="#createPlan">Create Workout Plan</a>
+                </div>
+                <div class="card-body pt-2">
+                    <h3>Plans</h3>
+                    <div class="col-lg-2 mb-lg-0 my-2">
+                        <div class="card border border-primary">
+                            <div class="card-body p-3">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="d-flex flex-column h-100">
+                                            <div class="d-flex justify-content-center align-items-center w-100">
+                                                <a href="javascript:void(0)" class="btn btn-link mb-0">
+                                                    Noting Yet
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="createPlan" tabindex="-1" aria-labelledby="createPlanLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="createPlanLabel">Create Plan</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="{% url "GYM:create" %}" method="post">
+                        {% csrf_token %}
+                        {{ form }}
+                        <div class="mt-4 d-flex justify-content-evenly">
+                            <button type="button" class="btn btn-outline-danger w-25" data-bs-dismiss="modal">Close
+                            </button>
+                            <input type="submit" class="btn btn-primary w-25" value="Save">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 {% endblock %}

@@ -1,10 +1,28 @@
+from django.shortcuts import reverse
 from django.contrib.messages.views import SuccessMessageMixin
+from django.views import generic
 
 from .models import GymTracker
 
-from .forms import CreateGymForm
+from .forms import CreateGymForm, UpdateGymForm
 
-from django.views import generic
+
+class DetailGYMView(generic.edit.FormMixin, generic.DetailView):
+    template_name = "dashboard/gym-detail.html"
+    model = GymTracker
+    form_class = UpdateGymForm
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        form_values = {
+            "gym_name": self.object.gym_name,
+            "start_at": self.object.start_at,
+            "end_at": self.object.end_at,
+            "exercise_in_week": self.object.exercise_in_week,
+            "exercise_in_day": self.object.exercise_in_day,
+        }
+        context['form'] = UpdateGymForm(initial=form_values)
+        return context
 
 
 class CreateGYMView(SuccessMessageMixin, generic.CreateView):
@@ -18,9 +36,12 @@ class CreateGYMView(SuccessMessageMixin, generic.CreateView):
         return super(CreateGYMView, self).form_valid(form)
 
 
-class DetailGYMView(generic.DetailView):
-    template_name = "dashboard/gym-detail.html"
+class UpdateGYMView(SuccessMessageMixin, generic.UpdateView):
     model = GymTracker
+    form_class = UpdateGymForm
+    success_message = "GYM was updated successfully"
 
-
+    def get_success_url(self):
+        view_name = 'GYM:detail'
+        return reverse(view_name, kwargs={'pk': self.object.id})
 
