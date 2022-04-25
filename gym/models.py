@@ -10,3 +10,6 @@ class GymTracker(models.Model):
     end_at = models.DateTimeField(blank=True, null=True)
     exercise_in_week = models.PositiveBigIntegerField(default=1)
     exercise_in_day = models.PositiveBigIntegerField(default=1)
+
+    def get_program_day1(self):
+        return self.program_set.filter(day='day1')

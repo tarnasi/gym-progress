@@ -9,7 +9,8 @@ urlpatterns = [
     path('dashboard/admin/', admin.site.urls),
     path('auth/', include('authenticate.urls', namespace="authenticate")),
     path('', DashboardView.as_view(), name="home-page"),
-    path('gym/', include('gym.urls', namespace="GYM"))
+    path('gym/', include('gym.urls', namespace="GYM")),
+    path('program/', include('program.urls', namespace="Program")),
 ]
 
 if settings.DEBUG is True:

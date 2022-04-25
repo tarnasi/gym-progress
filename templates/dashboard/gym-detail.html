@@ -41,7 +41,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-6">
+        <div class="col-12 mt-4">
             <div class="card border border-dark">
                 <div class="card-header pb-2">
                     <a class="btn btn-primary" href="javascript:void(0)" data-bs-toggle="modal"
@@ -50,21 +50,268 @@
                 <div class="card-body pt-2">
                     <h3>Plans</h3>
                     <div class="col-lg-2 mb-lg-0 my-2">
-                        <div class="card border border-primary">
-                            <div class="card-body p-3">
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <div class="d-flex flex-column h-100">
-                                            <div class="d-flex justify-content-center align-items-center w-100">
-                                                <a href="javascript:void(0)" class="btn btn-link mb-0">
-                                                    Noting Yet
-                                                </a>
+                        {% for day in object.program_set.first.DAYS %}
+                            {% if program.day == "day1" %}
+                                {% for day in object.get_program_day1 %}
+                                    <div class="d-flex flex-column">
+                                        <h3>{{ program.day }}</h3>
+                                        <div class="card border border-primary">
+                                            <div class="card-body p-3">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="d-flex flex-column h-100">
+                                                            <div class="d-flex justify-content-center align-items-center w-100">
+                                                                <ul>
+                                                                    <li><b>Move:</b> {{ program.move }}</li>
+                                                                    <li>
+                                                                        <b>SET/Reps:</b> {{ program.set }}x{{ program.repetition }}
+                                                                    </li>
+                                                                    <li><b>Move:</b> {{ program.last_weight }}</li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
+                                {% endfor %}
+                            {% endif %}
+                            {% if program.day == "day2" %}
+                                {% for day in object.program_set.all %}
+                                    <div class="d-flex flex-column">
+                                        <h3>{{ program.day }}</h3>
+                                        <div class="card border border-primary">
+                                            <div class="card-body p-3">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="d-flex flex-column h-100">
+                                                            <div class="d-flex justify-content-center align-items-center w-100">
+                                                                <ul>
+                                                                    <li><b>Move:</b> {{ program.move }}</li>
+                                                                    <li>
+                                                                        <b>SET/Reps:</b> {{ program.set }}x{{ program.repetition }}
+                                                                    </li>
+                                                                    <li><b>Move:</b> {{ program.last_weight }}</li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                            {% if program.day == "day3" %}
+                                {% for day in object.program_set.all %}
+                                    <div class="d-flex flex-column">
+                                        <h3>{{ program.day }}</h3>
+                                        <div class="card border border-primary">
+                                            <div class="card-body p-3">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="d-flex flex-column h-100">
+                                                            <div class="d-flex justify-content-center align-items-center w-100">
+                                                                <ul>
+                                                                    <li><b>Move:</b> {{ program.move }}</li>
+                                                                    <li>
+                                                                        <b>SET/Reps:</b> {{ program.set }}x{{ program.repetition }}
+                                                                    </li>
+                                                                    <li><b>Move:</b> {{ program.last_weight }}</li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                            {% if program.day == "day4" %}
+                                {% for day in object.program_set.all %}
+                                    <div class="d-flex flex-column">
+                                        <h3>{{ program.day }}</h3>
+                                        <div class="card border border-primary">
+                                            <div class="card-body p-3">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="d-flex flex-column h-100">
+                                                            <div class="d-flex justify-content-center align-items-center w-100">
+                                                                <ul>
+                                                                    <li><b>Move:</b> {{ program.move }}</li>
+                                                                    <li>
+                                                                        <b>SET/Reps:</b> {{ program.set }}x{{ program.repetition }}
+                                                                    </li>
+                                                                    <li><b>Move:</b> {{ program.last_weight }}</li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                            {% if program.day == "day5" %}
+                                {% for day in object.program_set.all %}
+                                    <div class="d-flex flex-column">
+                                        <h3>{{ program.day }}</h3>
+                                        <div class="card border border-primary">
+                                            <div class="card-body p-3">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="d-flex flex-column h-100">
+                                                            <div class="d-flex justify-content-center align-items-center w-100">
+                                                                <ul>
+                                                                    <li><b>Move:</b> {{ program.move }}</li>
+                                                                    <li>
+                                                                        <b>SET/Reps:</b> {{ program.set }}x{{ program.repetition }}
+                                                                    </li>
+                                                                    <li><b>Move:</b> {{ program.last_weight }}</li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                            {% if program.day == "day6" %}
+                                {% for day in object.program_set.all %}
+                                    <div class="d-flex flex-column">
+                                        <h3>{{ program.day }}</h3>
+                                        <div class="card border border-primary">
+                                            <div class="card-body p-3">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="d-flex flex-column h-100">
+                                                            <div class="d-flex justify-content-center align-items-center w-100">
+                                                                <ul>
+                                                                    <li><b>Move:</b> {{ program.move }}</li>
+                                                                    <li>
+                                                                        <b>SET/Reps:</b> {{ program.set }}x{{ program.repetition }}
+                                                                    </li>
+                                                                    <li><b>Move:</b> {{ program.last_weight }}</li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                            {% if program.day == "day7" %}
+                                {% for day in object.program_set.all %}
+                                    <div class="d-flex flex-column">
+                                        <h3>{{ program.day }}</h3>
+                                        <div class="card border border-primary">
+                                            <div class="card-body p-3">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="d-flex flex-column h-100">
+                                                            <div class="d-flex justify-content-center align-items-center w-100">
+                                                                <ul>
+                                                                    <li><b>Move:</b> {{ program.move }}</li>
+                                                                    <li>
+                                                                        <b>SET/Reps:</b> {{ program.set }}x{{ program.repetition }}
+                                                                    </li>
+                                                                    <li><b>Move:</b> {{ program.last_weight }}</li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                            {% if program.day == "day8" %}
+                                {% for day in object.program_set.all %}
+                                    <div class="d-flex flex-column">
+                                        <h3>{{ program.day }}</h3>
+                                        <div class="card border border-primary">
+                                            <div class="card-body p-3">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="d-flex flex-column h-100">
+                                                            <div class="d-flex justify-content-center align-items-center w-100">
+                                                                <ul>
+                                                                    <li><b>Move:</b> {{ program.move }}</li>
+                                                                    <li>
+                                                                        <b>SET/Reps:</b> {{ program.set }}x{{ program.repetition }}
+                                                                    </li>
+                                                                    <li><b>Move:</b> {{ program.last_weight }}</li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                            {% if program.day == "day9" %}
+                                {% for day in object.program_set.all %}
+                                    <div class="d-flex flex-column">
+                                        <h3>{{ program.day }}</h3>
+                                        <div class="card border border-primary">
+                                            <div class="card-body p-3">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="d-flex flex-column h-100">
+                                                            <div class="d-flex justify-content-center align-items-center w-100">
+                                                                <ul>
+                                                                    <li><b>Move:</b> {{ program.move }}</li>
+                                                                    <li>
+                                                                        <b>SET/Reps:</b> {{ program.set }}x{{ program.repetition }}
+                                                                    </li>
+                                                                    <li><b>Move:</b> {{ program.last_weight }}</li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                            {% if program.day == "day10" %}
+                                {% for day in object.program_set.all %}
+                                    <div class="d-flex flex-column">
+                                        <h3>{{ program.day }}</h3>
+                                        <div class="card border border-primary">
+                                            <div class="card-body p-3">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="d-flex flex-column h-100">
+                                                            <div class="d-flex justify-content-center align-items-center w-100">
+                                                                <ul>
+                                                                    <li><b>Move:</b> {{ program.move }}</li>
+                                                                    <li>
+                                                                        <b>SET/Reps:</b> {{ program.set }}x{{ program.repetition }}
+                                                                    </li>
+                                                                    <li><b>Move:</b> {{ program.last_weight }}</li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                        {% endfor %}
                     </div>
                 </div>
             </div>
@@ -78,9 +325,9 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form action="{% url "GYM:create" %}" method="post">
+                    <form action="{% url "Program:create" object.id %}" method="post">
                         {% csrf_token %}
-                        {{ form }}
+                        {{ program_form }}
                         <div class="mt-4 d-flex justify-content-evenly">
                             <button type="button" class="btn btn-outline-danger w-25" data-bs-dismiss="modal">Close
                             </button>

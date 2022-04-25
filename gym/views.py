@@ -5,6 +5,7 @@ from django.views import generic
 from .models import GymTracker
 
 from .forms import CreateGymForm, UpdateGymForm
+from program.forms import ProgramForm
 
 
 class DetailGYMView(generic.edit.FormMixin, generic.DetailView):
@@ -22,6 +23,7 @@ class DetailGYMView(generic.edit.FormMixin, generic.DetailView):
             "exercise_in_day": self.object.exercise_in_day,
         }
         context['form'] = UpdateGymForm(initial=form_values)
+        context['program_form'] = ProgramForm()
         return context
 
 
@@ -42,6 +44,5 @@ class UpdateGYMView(SuccessMessageMixin, generic.UpdateView):
     success_message = "GYM was updated successfully"
 
     def get_success_url(self):
-        view_name = 'GYM:detail'
-        return reverse(view_name, kwargs={'pk': self.object.id})
+        return reverse('GYM:detail', kwargs={'pk': self.object.id})
 
