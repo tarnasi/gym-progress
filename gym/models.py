@@ -13,3 +13,30 @@ class GymTracker(models.Model):
 
     def get_program_day1(self):
         return self.program_set.filter(day='day1')
+
+    def get_program_day2(self):
+        return self.program_set.filter(day='day2')
+
+    def get_program_day3(self):
+        return self.program_set.filter(day='day3')
+
+    def get_program_day4(self):
+        return self.program_set.filter(day='day4')
+
+    def get_program_day5(self):
+        return self.program_set.filter(day='day5')
+
+    def get_program_day6(self):
+        return self.program_set.filter(day='day6')
+
+    def get_program_day7(self):
+        return self.program_set.filter(day='day7')
+
+    def get_program_day8(self):
+        return self.program_set.filter(day='day8')
+
+    def get_program_day9(self):
+        return self.program_set.filter(day='day9')
+
+    def get_program_day10(self):
+        return self.program_set.filter(day='day10')
