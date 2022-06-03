@@ -19,6 +19,7 @@ class Schedule(models.Model):
         ('December', 'december'),
     )
 
+    title = models.CharField(max_length=100, blank=True, null=True)
     month = models.CharField(max_length=200, choices=YEAR_MONTHS)
     start_date = models.DateField()
 
