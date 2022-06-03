@@ -7,6 +7,8 @@ from django.core.exceptions import ValidationError
 
 from rest_framework_simplejwt.tokens import RefreshToken
 
+from .utils import user_avatars
+
 
 class UserManager(BaseUserManager):
     def create_user(self, email, password=None):
@@ -52,6 +54,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     is_admin = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
     is_staff = models.BooleanField(default=False)
+    avatar = models.ImageField(upload_to=user_avatars, blank=True, null=True)
 
     USERNAME_FIELD = 'email'
 
@@ -79,3 +82,18 @@ class User(AbstractBaseUser, PermissionsMixin):
         verbose_name = 'User'
         verbose_name_plural = 'Users'
         ordering = ('date_joined',)
+
+
+class PersonalInfo(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    weight = models.PositiveBigIntegerField(default=0, blank=True)
+    height = models.FloatField(default=0.0, blank=True)
+    blood_type = models.CharField(max_length=5, null=True, blank=True)
+
+    def __str__(self):
+        return f"User {self.user.email} info: {self.blood_type}"
+
+    class Meta:
+        verbose_name = 'personal_info'
+        verbose_name_plural = 'PersonalInfo'
+        ordering = ('weight',)

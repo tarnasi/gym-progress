@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "corsheaders",
 
     'authenticate.apps.AuthenticateConfig',
+    'program.apps.ProgramConfig',
 ]
 
 MIDDLEWARE = [

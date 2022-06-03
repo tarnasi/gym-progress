@@ -9,9 +9,12 @@ from rest_framework_simplejwt.views import (
 )
 
 urlpatterns = [
-    path('dashboard/admin/', admin.site.urls),
+    path('portal', admin.site.urls),
     path('api/token', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh', TokenRefreshView.as_view(), name='token_refresh'),
+
+    # apps urls
+    path('api/user/', include('authenticate.urls', namespace="authenticate")),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
