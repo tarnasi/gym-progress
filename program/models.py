@@ -37,6 +37,9 @@ class Program(models.Model):
     def __str__(self):
         return self.name
 
+    class Meta:
+        ordering = ['schedule']
+
 
 class Workout(models.Model):
     program = models.ForeignKey(Program, on_delete=models.CASCADE)
@@ -45,7 +48,10 @@ class Workout(models.Model):
     rep = models.PositiveIntegerField(default=0)
     rest = models.PositiveIntegerField(default=0)
     last_weight = models.CharField(max_length=200, null=True, blank=True)
-    image = models.ImageField(upload_to=program_images)
+    image = models.ImageField(upload_to=program_images, null=True, blank=True)
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        ordering = ['program']
