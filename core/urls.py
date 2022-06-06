@@ -8,10 +8,15 @@ from rest_framework_simplejwt.views import (
     TokenRefreshView,
 )
 
+from .swagger import schema_view
+
 urlpatterns = [
     path('portal', admin.site.urls),
     path('api/token', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh', TokenRefreshView.as_view(), name='token_refresh'),
+
+    # swagger
+    path(r'docs', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
 
     # apps urls
     path('api/user/', include('authenticate.urls', namespace="authenticate")),
