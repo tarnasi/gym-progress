@@ -15,6 +15,7 @@ urlpatterns = [
 
     # apps urls
     path('api/user/', include('authenticate.urls', namespace="authenticate")),
+    path('api/program/', include('program.urls', namespace="program")),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
