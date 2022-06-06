@@ -6,12 +6,12 @@ from drf_yasg import openapi
 
 schema_view = get_schema_view(
    openapi.Info(
-      title="Snippets API",
+      title="GYM Program API",
       default_version='v1',
-      description="Test description",
-      terms_of_service="https://www.google.com/policies/terms/",
-      contact=openapi.Contact(email="contact@snippets.local"),
-      license=openapi.License(name="BSD License"),
+      description="Manage Athlete workouts with fully detail",
+      terms_of_service="https://enigmastudio.dev/policies",
+      contact=openapi.Contact(email="enigmastudio2022@gmail.com"),
+      license=openapi.License(name="Private License"),
    ),
    public=True,
    permission_classes=(permissions.AllowAny, ),
