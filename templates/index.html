@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="دریافت برنامه ورزشی توسط اساتید مجرب و سایتی برای رشد فردی یک ورزشکار">
+    <meta name="author" content="Shahriyar Tarnasi">
+    <title>Coach Program</title>
+    <link href="/assets/site/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+          integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="/assets/site/css/main.css">
+    <link rel="stylesheet" href="/assets/site/css/animated.css">
+    <link rel="stylesheet" href="/assets/site/css/owl.css">
+</head>
+<body dir="rtl">
+<!-- ***** Preloader Start ***** -->
+<div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+        <span class="dot"></span>
+        <div class="dots">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</div>
+<!-- ***** Preloader End ***** -->
+
+<!-- ***** Header Area Start ***** -->
+<header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- ***** Logo Start ***** -->
+                    <a href="index.html" class="logo">
+                        {#                        <img src="/assets/site/images/logo.png" alt="Chain App Dev">#}
+                    </a>
+                    <!-- ***** Logo End ***** -->
+                    <!-- ***** Menu Start ***** -->
+                    <ul class="nav">
+                        <li class="scroll-to-section"><a href="#top" class="active">خانه</a></li>
+                        <li class="scroll-to-section"><a href="#services">سرویس</a></li>
+                        <li class="scroll-to-section"><a href="#about">درباره ما</a></li>
+                        <li class="scroll-to-section"><a href="#pricing">قیمت ها</a></li>
+                        <li class="scroll-to-section"><a href="#newsletter">اخبار</a></li>
+                        <li>
+                            <div class="gradient-button"><a id="modal_trigger" href="#modal"><i
+                                    class="fa fa-sign-in-alt"></i> ثبت نام</a></div>
+                        </li>
+                    </ul>
+                    <a class='menu-trigger'>
+                        <span>منو</span>
+                    </a>
+                    <!-- ***** Menu End ***** -->
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- ***** Header Area End ***** -->
+<div id="modal" class="popupContainer" style="display:none;">
+    <div class="popupHeader">
+        <span class="header_title">ورود</span>
+        <span class="modal_close"><i class="fa fa-times"></i></span>
+    </div>
+    <section class="popupBody">
+        <!-- Social Login -->
+        <div class="social_login">
+            <div class="action_btns">
+                <div class="one_half"><a href="#" id="login_form" class="btn">ورود</a></div>
+                <div class="one_half last"><a href="#" id="register_form" class="btn">ثبت نام</a></div>
+            </div>
+        </div>
+
+        <!-- Username & Password Login form -->
+        <div class="user_login">
+            <form>
+                <label>ایمیل</label>
+                <input type="text"/>
+                <br/>
+                <label>پسورد</label>
+                <input type="password"/>
+                <br/>
+                <div class="checkbox">
+                    <input id="remember" type="checkbox"/>
+                    <label for="remember">مرا به خاطر بسپار</label>
+                </div>
+                <div class="action_btns">
+                    <div class="one_half"><a href="#" class="btn back_btn"><i class="fa fa-angle-double-left"></i> برگشت</a>
+                    </div>
+                    <div class="one_half last"><a href="#" class="btn btn_red">ورود</a></div>
+                </div>
+            </form>
+
+            <a href="#" class="forgot_password">فراموشی رمز عبور؟</a>
+        </div>
+        <div class="user_register">
+            <form>
+                <label>نام و نام خانوادگی</label>
+                <input type="text"/>
+                <br/>
+                <label>ایمیل</label>
+                <input type="email"/>
+                <br/>
+                <label>پسورد</label>
+                <input type="password"/>
+                <br/>
+                <div class="checkbox">
+                    <input id="send_updates" type="checkbox"/>
+                    <label for="send_updates">دریافت ایمیل اخبار ورزشی</label>
+                </div>
+
+                <div class="action_btns">
+                    <div class="one_half"><a href="#" class="btn back_btn"><i class="fa fa-angle-double-left"></i> برگشت</a>
+                    </div>
+                    <div class="one_half last"><a href="#" class="btn btn_red">ثبت نام</a></div>
+                </div>
+            </form>
+        </div>
+    </section>
+</div>
+<div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-lg-6 align-self-center">
+                        <div class="left-content show-up header-text wow fadeInLeft" data-wow-duration="1s"
+                             data-wow-delay="1s">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <h2>برنامه ورزشی تان را در سریع ترین زمان دریافت کنید</h2>
+                                    <p>دریافت برنامه ورزشی، هدایت ورزشکار، برنامه غذایی. ورزشکاران برای گرفتن نتیجه بهتر
+                                        نیاز دارن زیرنظر مربی ورزشی مخصوص خود کار کنن تا به نتیجه مطلوب خود برسند.</p>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="white-button first-button scroll-to-section">
+                                        <a href="#contact"><i class="fa fa-circle-notch"></i> شروع کنید </a>
+                                    </div>
+                                    <div class="white-button scroll-to-section">
+                                        <a href="#contact"><i class="fa fa-receipt"></i> دریافت برنامه </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="right-image wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
+                            <img src="/assets/site/images/slider-dec.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="services" class="services section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <div class="section-heading  wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
+                    <h4 class="h3">دریافت <em>برنامه و تغذیه</em> برای شما</h4>
+                    <img src="/assets/site/images/heading-line-dec.png" alt="">
+                    <p>ویزگی های برنامه شامل تمام حرکات بدنسازی که در داشبورد شما قابل نمایش است. همچنین تمام غذا هایی
+                        مه یک ورزشکار در مسیر رشد خود نیاز دارد در پنل خود به راحتی قابل دسترسی است.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="service-item first-service">
+                    <div class="icon"></div>
+                    <h4>برنامه ورزشی</h4>
+                    <p>شامل تمام حرکات بدنسازی تهیه شده توسط اساتید مجرب</p>
+                    <div class="text-button">
+                        <a href="#"><i class="fa fa-arrow-left"></i> نمایش بیشتر</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="service-item second-service">
+                    <div class="icon"></div>
+                    <h4>برنامه غذایی</h4>
+                    <p>دستور تهیه غذایی مه برای رشد یک ورزشکار حرفه ای الزامیست</p>
+                    <div class="text-button">
+                        <a href="#"><i class="fa fa-arrow-left"></i> نمایش بیشتر</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="service-item third-service">
+                    <div class="icon"></div>
+                    <h4>توسعه فردی</h4>
+                    <p>مدیریت حرکات مورد نیاز عضلات شما توسط مربی به وصرت ماهانه</p>
+                    <div class="text-button">
+                        <a href="#"><i class="fa fa-arrow-left"></i> نمایش بیشتر</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="service-item fourth-service">
+                    <div class="icon"></div>
+                    <h4>حمایت 24 ساعته توسط مربی</h4>
+                    <p>هدایت مربی از انجام درست حرکات، مدت زمان استراحت و وزن وزنه مورد نیاز بدنتان برای رشد بهتر</p>
+                    <div class="text-button">
+                        <a href="#"><i class="fa fa-arrow-left"></i> نمایش بیشتر</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="about" class="about-us section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 align-self-center">
+                <div class="section-heading">
+                    <h4>ما <em>چه هدفی داریم</em> و چطور به نتیجه میرسانیم</h4>
+                    <img src="/assets/site/images/heading-line-dec.png" alt="">
+                    <p>توضیح مختصری درمورد درمورد هدف از این سرویس و وظایف ما</p>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="box-item">
+                            <h4><a href="#">مدیریت منظم برنامه ها</a></h4>
+                            <p>داشبورد ویژخ</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="box-item">
+                            <h4><a href="#">حمایت</a></h4>
+                            <p>حرکات طبق پیشینه ورزشی</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="box-item">
+                            <h4><a href="#">راهنمایی در پیشبرد حرکات</a></h4>
+                            <p>حضور در انجام حرکات</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="box-item">
+                            <h4><a href="#">برنامه ورزشی خصوصی</a></h4>
+                            <p>به سمت حرفه ای شدن</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="right-image">
+                    <img src="/assets/site/images/about-right-dec.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="clients" class="the-clients">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <div class="section-heading">
+                    <h4><em>نظرات مشتریان</em> در مورد ما</h4>
+                    <img src="/assets/site/images/heading-line-dec.png" alt="">
+                    <p>تمام ورزشکارانی که با ما کار میکنند نظراشان برای ما ارزشمند است</p>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="naccs">
+                    <div class="grid">
+                        <div class="row">
+                            <div class="col-lg-7 align-self-center">
+                                <div class="menu">
+                                    <div class="first-thumb active">
+                                        <div class="thumb">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-sm-4 col-12">
+                                                    <h4>شهریار ترناسی</h4>
+                                                    <span class="date">اردیبهشت سال 1401</span>
+                                                </div>
+                                                <div class="col-lg-4 col-sm-4 col-12">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <span class="rating">4.8</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="thumb">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-sm-4 col-12">
+                                                    <h4>مهدی تهورگر</h4>
+                                                    <span class="date">مهر سال 1400</span>
+                                                </div>
+                                                <div class="col-lg-4 col-sm-4 col-12">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <span class="rating">4.5</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="thumb">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-sm-4 col-12">
+                                                    <h4>علیرضا همتی</h4>
+                                                    <span class="date">آیان سال 1400</span>
+                                                </div>
+                                                <div class="col-lg-4 col-sm-4 col-12">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <span class="rating">4.7</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="thumb">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-sm-4 col-12">
+                                                    <h4>اتابک هوشنگی</h4>
+                                                    <span class="date">خرداد سال 1401</span>
+                                                </div>
+                                                <div class="col-lg-4 col-sm-4 col-12">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <span class="rating">3.9</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-5">
+                                <ul class="nacc">
+                                    <li class="active">
+                                        <div>
+                                            <div class="thumb">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="client-content">
+                                                            <img src="/assets/site/images/quote.png" alt="">
+                                                            <p>توسط مربی خودم تونستم به نتیجه دلخواهم برسم خیلی بهم
+                                                                انگیزه داد تا اول صبر داشته باشم و دوم منظم کار کنم و
+                                                                بعد 5 ماه واقعا تغییر عمده ای در بدنم دیدم و این رو
+                                                                مدیون مربی خوبم هستم.</p>
+                                                        </div>
+                                                        <div class="down-content">
+                                                            <img src="/assets/site/images/tarnasi.png" alt="tarnasi">
+                                                            <div class="right-content">
+                                                                <h4>شهریار ترناسی</h4>
+                                                                <span>برنامه نویس</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div>
+                                            <div class="thumb">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="client-content">
+                                                            <img src="/assets/site/images/quote.png" alt="">
+                                                            <p>“CTO, Lorem ipsum dolor sit amet, consectetur adpiscing
+                                                                elit, sed do eismod tempor idunte ut labore et dolore
+                                                                magna aliqua darwin kengan
+                                                                lorem ipsum dolor sit amet, consectetur picing elit
+                                                                massive big blasta.”</p>
+                                                        </div>
+                                                        <div class="down-content">
+                                                            <img src="/assets/site/images/client-image.jpg" alt="">
+                                                            <div class="right-content">
+                                                                <h4>Jake H. Nyo</h4>
+                                                                <span>CTO of Digital Company</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div>
+                                            <div class="thumb">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="client-content">
+                                                            <img src="/assets/site/images/quote.png" alt="">
+                                                            <p>“May, Lorem ipsum dolor sit amet, consectetur adpiscing
+                                                                elit, sed do eismod tempor idunte ut labore et dolore
+                                                                magna aliqua darwin kengan
+                                                                lorem ipsum dolor sit amet, consectetur picing elit
+                                                                massive big blasta.”</p>
+                                                        </div>
+                                                        <div class="down-content">
+                                                            <img src="/assets/site/images/client-image.jpg" alt="">
+                                                            <div class="right-content">
+                                                                <h4>May C.</h4>
+                                                                <span>Founder of Catherina Co.</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div>
+                                            <div class="thumb">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="client-content">
+                                                            <img src="/assets/site/images/quote.png" alt="">
+                                                            <p>“Lorem ipsum dolor sit amet, consectetur adpiscing elit,
+                                                                sed do eismod tempor idunte ut labore et dolore magna
+                                                                aliqua darwin kengan
+                                                                lorem ipsum dolor sit amet, consectetur picing elit
+                                                                massive big blasta.”</p>
+                                                        </div>
+                                                        <div class="down-content">
+                                                            <img src="/assets/site/images/client-image.jpg" alt="">
+                                                            <div class="right-content">
+                                                                <h4>Random Staff</h4>
+                                                                <span>Manager, Digital Company</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div>
+                                            <div class="thumb">
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <div class="client-content">
+                                                            <img src="/assets/site/images/quote.png" alt="">
+                                                            <p>“Mark, Lorem ipsum dolor sit amet, consectetur adpiscing
+                                                                elit, sed do eismod tempor idunte ut labore et dolore
+                                                                magna aliqua darwin kengan
+                                                                lorem ipsum dolor sit amet, consectetur picing elit
+                                                                massive big blasta.”</p>
+                                                        </div>
+                                                        <div class="down-content">
+                                                            <img src="/assets/site/images/client-image.jpg" alt="">
+                                                            <div class="right-content">
+                                                                <h4>Mark Am</h4>
+                                                                <span>CTO, Amber Do Company</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="pricing" class="pricing-tables">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <div class="section-heading">
+                    <h4>سرویس و قیمت های پیشنهادی ما برای شما</h4>
+                    <img src="/assets/site/images/heading-line-dec.png" alt="">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eismod tempor incididunt ut
+                        labore et dolore magna.</p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="pricing-item-regular">
+                    <span class="price">رایگان</span>
+                    <h4>برنامه عمومی</h4>
+                    <div class="icon">
+                        <img src="/assets/site/images/pricing-table-01.png" alt="">
+                    </div>
+                    <ul>
+                        <li>جزییات این برنامه</li>
+                        <li>برنامه غذایی عمومی</li>
+                        <li class="non-function">برنامه ماهانه</li>
+                        <li class="non-function">نیاز به حضور در باشگاه</li>
+                    </ul>
+                    <div class="border-button">
+                        <a href="#">شروع کنید</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="pricing-item-pro">
+                    <span class="price">400 تومان</span>
+                    <h4>برنامه ویژه</h4>
+                    <div class="icon">
+                        <img src="/assets/site/images/pricing-table-01.png" alt="">
+                    </div>
+                    <ul>
+                        <li>برنامه غذایی عمومی</li>
+                        <li>برنامه ورزشی خصوصی</li>
+                        <li>برنامه ورزشی براساس ورزش های شما</li>
+                        <li>حمایت</li>
+                        <li class="non-function">آموزش حرکات</li>
+                        <li class="non-function">دسترسی به آرشیو حرکات</li>
+                    </ul>
+                    <div class="border-button">
+                        <a href="#">شروع کن</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="pricing-item-regular">
+                    <span class="price">900 تومان</span>
+                    <h4>برنامه خصوصی</h4>
+                    <div class="icon">
+                        <img src="/assets/site/images/pricing-table-01.png" alt="">
+                    </div>
+                    <ul>
+                        <li>برنامه غذایی خصوصی</li>
+                        <li>برنامه ورزشی خصوصی</li>
+                        <li>برنامه ورزشی براساس ورزش های شما</li>
+                        <li>همراه بدون صد درصدی</li>
+                        <li>آموزش حرکات</li>
+                        <li>دسترسی به آرشیو حرکات و آرشیو غذایی</li>
+                    </ul>
+                    <div class="border-button">
+                        <a href="#">شروع کن</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer id="newsletter">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <div class="section-heading">
+                    <h4>عضویت در خبرنامه ورزشی</h4>
+                </div>
+            </div>
+            <div class="col-lg-6 offset-lg-3">
+                <form id="search" action="#" method="GET">
+                    <div class="row">
+                        <div class="col-lg-6 col-sm-6">
+                            <fieldset>
+                                <input type="address" name="address" class="email" placeholder="آدرس ایمیل"
+                                       autocomplete="on" required>
+                            </fieldset>
+                        </div>
+                        <div class="col-lg-6 col-sm-6">
+                            <fieldset>
+                                <button type="submit" class="main-button"><i
+                                        class="fa fa-angle-left"></i> عضو میشوم
+                                </button>
+                            </fieldset>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="footer-widget">
+                    <h4>تماس با ما</h4>
+                    <p>به زودی...</p>
+                    <p><a href="#">به زودی</a></p>
+                    <p><a href="#">enigmastudio2022@gmail.com</a></p>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="footer-widget">
+                    <h4>دریاره ما</h4>
+                    <ul>
+                        <li><a href="#">خانه</a></li>
+                        <li><a href="#">سرویس ها</a></li>
+                        <li><a href="#">درباره ما</a></li>
+                        <li><a href="#">قیمت ها</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="footer-widget">
+                    <h4>لینک های مفید</h4>
+                    <ul>
+                        <li><a href="#">ورزش حرفه ای</a></li>
+                        <li><a href="#">کراس فیت</a></li>
+                        <li><a href="#">کلستنیک</a></li>
+                        <li><a href="#">ژیمناستیک</a></li>
+                        <li><a href="#">رزمی</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="footer-widget">
+                    <h4>درباره شرکت</h4>
+                    <div class="logo">
+                    </div>
+                    <p>شرکت انیگما استدیو در راستای ساخت اپلیکیشن های تحت وب، داشبورد مدیریتی، اسکریپت های پیشرفته قدم
+                        گذاشته تا بتواند بهترین خروجی را برای دارندگان بیزنس ایجاد کند.</p>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="copyright-text">
+                    <p>Copyright © 2022 EnigmaStudio. All Rights Reserved.
+                        <br><a href="https://enigmastudio.dev/" target="_blank"
+                                       title="css templates">انیگما استدیو</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<!-- Scripts -->
+<script src="/assets/site/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/site/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/site/js/owl-carousel.js"></script>
+<script src="/assets/site/js/animation.js"></script>
+<script src="/assets/site/js/imagesloaded.js"></script>
+<script src="/assets/site/js/popup.js"></script>
+<script src="/assets/site/js/custom.js"></script>
+</body>
+</html>
