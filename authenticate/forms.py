@@ -8,9 +8,9 @@ class LoginForm(forms.Form):
 
 class WorkoutCreateForm(forms.Form):
     name = forms.CharField(required=True)
-    set = forms.IntegerField(required=True)
-    rep = forms.IntegerField(required=True)
-    rest = forms.IntegerField(required=True)
+    set = forms.IntegerField(required=False)
+    rep = forms.IntegerField(required=False)
+    rest = forms.IntegerField(required=False)
     workout_image = forms.ImageField()
 
 

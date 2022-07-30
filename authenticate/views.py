@@ -72,11 +72,8 @@ class WorkoutCreatePage(View):
             new_w.rep = form.cleaned_data['rep']
             new_w.rest = form.cleaned_data['rest']
             new_w.image = form.cleaned_data['workout_image']
-            result = new_w.save()
-
-            if result:
-                return redirect('dashboard:workout-page')
-
+            new_w.save()
+            return redirect('dashboard:workout-page')
         return redirect('dashboard:workout-create-page')
 
 
