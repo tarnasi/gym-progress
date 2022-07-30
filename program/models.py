@@ -1,6 +1,10 @@
 from django.db import models
 
-from .utils import program_images
+from .utils import workout_images
+
+from django.contrib.auth import get_user_model
+
+User = get_user_model()
 
 
 class Schedule(models.Model):
@@ -42,13 +46,14 @@ class Program(models.Model):
 
 
 class Workout(models.Model):
-    program = models.ForeignKey(Program, on_delete=models.CASCADE)
+    program = models.ForeignKey(Program, on_delete=models.CASCADE, blank=True, null=True)
+    user = models.ManyToManyField(User)
     name = models.CharField(max_length=200)
     set = models.PositiveIntegerField(default=0)
     rep = models.PositiveIntegerField(default=0)
     rest = models.PositiveIntegerField(default=0)
     last_weight = models.CharField(max_length=200, null=True, blank=True)
-    image = models.ImageField(upload_to=program_images, null=True, blank=True)
+    image = models.ImageField(upload_to=workout_images, null=True, blank=True)
     language = models.CharField(max_length=10, default="fa")
 
     def __str__(self):

@@ -35,7 +35,7 @@
                 <nav class="main-nav">
                     <!-- ***** Logo Start ***** -->
                     <a href="index.html" class="logo">
-                        {#                        <img src="/assets/site/images/logo.png" alt="Chain App Dev">#}
+                        {# <img src="/assets/site/images/logo.png" alt="Chain App Dev">#}
                     </a>
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
@@ -46,8 +46,12 @@
                         <li class="scroll-to-section"><a href="#pricing">قیمت ها</a></li>
                         <li class="scroll-to-section"><a href="#newsletter">اخبار</a></li>
                         <li>
-                            <div class="gradient-button"><a id="modal_trigger" href="#modal"><i
-                                    class="fa fa-sign-in-alt"></i> ثبت نام</a></div>
+                            <div class="gradient-button">
+                                <a href="{% url "auth:login-page" %}">
+                                    <i class="fa fa-sign-in-alt"></i>
+                                    ورود
+                                </a>
+                            </div>
                         </li>
                     </ul>
                     <a class='menu-trigger'>

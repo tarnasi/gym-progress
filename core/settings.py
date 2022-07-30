@@ -3,6 +3,9 @@ import os
 import environ
 from datetime import timedelta
 
+import firebase_admin
+from firebase_admin import credentials, initialize_app
+
 env = environ.Env(
     # set casting, default value
     DEBUG=(bool, True)
@@ -38,9 +41,12 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_simplejwt',
     "corsheaders",
+    "fcm_django",
+    'drf_yasg',
 
     'authenticate.apps.AuthenticateConfig',
     'program.apps.ProgramConfig',
+    'notification.apps.NotificationConfig'
 ]
 
 MIDDLEWARE = [
@@ -160,7 +166,6 @@ REST_FRAMEWORK = {
     )
 }
 
-
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=500),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=10),
@@ -191,4 +196,15 @@ SIMPLE_JWT = {
     'SLIDING_TOKEN_REFRESH_EXP_CLAIM': 'refresh_exp',
     'SLIDING_TOKEN_LIFETIME': timedelta(minutes=5),
     'SLIDING_TOKEN_REFRESH_LIFETIME': timedelta(days=1),
+}
+
+# Firebase Cloud Messaging
+cred = credentials.Certificate(BASE_DIR / "coachprogram-8834b-firebase-adminsdk-4vxpt-a51c6c4e6d.json")
+FIREBASE_APP = initialize_app(credential=cred)
+
+FCM_DJANGO_SETTINGS = {
+    "APP_VERBOSE_NAME": "Cloud Messaging",
+    "ONE_DEVICE_PER_USER": False,
+    "DELETE_INACTIVE_DEVICES": False,
+    "UPDATE_ON_DUPLICATE_REG_ID": True,
 }
