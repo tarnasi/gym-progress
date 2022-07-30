@@ -1,0 +1,39 @@
+{% extends "dashboard/layout/app.html" %}
+
+{% block content %}
+    <!-- PAGE-HEADER -->
+    <div class="page-header">
+        <h1 class="page-title">برنامه ها</h1>
+        <div>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{% url 'dashboard:dashboard-page' %}">داشبورد</a></li>
+                <li class="breadcrumb-item" aria-current="page"><a href="{% url 'dashboard:workout-page' %}">برنامه</a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">ایجاد</li>
+            </ol>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    اطلاعات حرکت
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li class="fw-bold" style="font-size: 22px"> نام حرکت: {{ workout.name }}</li>
+                        <li class="fw-bold" style="font-size: 22px"> تعداد ست: {{ workout.set }}</li>
+                        <li class="fw-bold" style="font-size: 22px"> تعداد تکرار: {{ workout.rep }}</li>
+                        <li class="fw-bold" style="font-size: 22px"> زمان عمومی استراحت: {{ workout.rest }}</li>
+                    </ul>
+                    <div class="row justify-content-center align-items-center">
+                        <div class="col-md-6 col-sm-12">
+                            <img src="/media/{{ workout.image }}" alt="{{ workout.name }}"
+                                 class="mx-auto d-block shadow-lg p-4"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

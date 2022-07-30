@@ -78,3 +78,12 @@ class WorkoutCreatePage(View):
                 return redirect('dashboard:workout-page')
 
         return redirect('dashboard:workout-create-page')
+
+
+class WorkoutSinglePage(View):
+    def get(self, request, id):
+        workout = Workout.objects.get(id=id)
+        context = {
+            "workout": workout
+        }
+        return render(request, "dashboard/workout/single.html", context=context)
