@@ -1,0 +1,108 @@
+{% extends "dashboard/layout/app.html" %}
+
+{% block content %}
+    <!-- PAGE-HEADER -->
+    <div class="page-header">
+        <h1 class="page-title">برنامه ها</h1>
+        <div>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{% url 'dashboard:dashboard-page' %}">داشبورد</a></li>
+                <li class="breadcrumb-item active" aria-current="page">برنامه</li>
+            </ol>
+        </div>
+    </div>
+    <!-- PAGE-HEADER END -->
+    <!-- ROW-4 -->
+    <div class="row">
+        <div class="col-12 col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title mb-0">لیست برنامه ها</h3>
+                    <a class="btn btn-outline-primary fw-bold mx-3"
+                       href="{% url 'dashboard:workout-create-page' %}">ایجاد برنامه جدید</a>
+                </div>
+                <div class="card-body pt-4">
+                    <div class="grid-margin">
+                        <div class="">
+                            <div class="panel panel-primary">
+                                <div class="panel-body tabs-menu-body border-0 pt-0">
+                                    <div class="table-responsive">
+                                        <table id="data-table"
+                                               class="table table-bordered text-nowrap mb-0">
+                                            <thead class="border-top">
+                                            <tr>
+                                                <th class="bg-transparent border-bottom-0"
+                                                    style="width: 5%;">#
+                                                </th>
+                                                <th class="bg-transparent border-bottom-0">
+                                                    نام حرکت
+                                                </th>
+                                                <th class="bg-transparent border-bottom-0">
+                                                    ست
+                                                </th>
+                                                <th class="bg-transparent border-bottom-0">
+                                                    تکرار
+                                                </th>
+                                                <th class="bg-transparent border-bottom-0">
+                                                    استراحت (ثانیه)
+                                                </th>
+                                                <th class="bg-transparent border-bottom-0">
+                                                    عملیات
+                                                </th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            {% for data in workouts %}
+                                                <tr class="border-bottom">
+                                                    <td class="text-center">
+                                                        <div class="mt-0 mt-sm-2 d-block">
+                                                            <h6 class="mb-0 fs-14 fw-bold">{{ data.id }}</h6>
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <div class="mt-0 mt-sm-2 d-block">
+                                                            <h6 class="mb-0 fs-14 fw-bold">{{ data.name }}</h6>
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <div class="mt-0 mt-sm-2 d-block">
+                                                            <h6 class="mb-0 fs-14 fw-bold">{{ data.set }}</h6>
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <div class="mt-0 mt-sm-2 d-block">
+                                                            <h6 class="mb-0 fs-14 fw-bold">{{ data.rep }}</h6>
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <div class="mt-0 mt-sm-2 d-block">
+                                                            <h6 class="mb-0 fs-14 fw-bold">{{ data.rest }}</h6>
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <div class="g-2">
+                                                            <a class="btn text-primary btn-sm"
+                                                               data-bs-toggle="tooltip"
+                                                               data-bs-original-title="Edit"><span
+                                                                    class="fe fe-edit fs-14"></span></a>
+                                                            <a class="btn text-danger btn-sm"
+                                                               data-bs-toggle="tooltip"
+                                                               data-bs-original-title="Delete"><span
+                                                                    class="fe fe-trash-2 fs-14"></span></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            {% endfor %}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ROW-4 END -->
+{% endblock %}
